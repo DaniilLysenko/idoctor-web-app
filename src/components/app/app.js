@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import Header from '../header'
 import Sidebar from '../sidebar'
-import LoginPage from '../login-page'
-import DashboardPage from '../dashboard-page'
+import LoginPage from '../../pages/login-page'
+import DashboardPage from '../../pages/dashboard-page'
 
 const App = () => {
   return (
