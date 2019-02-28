@@ -1,4 +1,4 @@
-import withUserService from './with-user-service'
+import withUserService from './withUserService'
 
 export {
   withUserService

@@ -4,8 +4,8 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from "react-router-dom"
 
 import App from './components/app';
-import UserService from './services/user-service'
-import { UserServiceProvider } from './components/user-service-context'
+import UserService from './services/userService'
+import { UserServiceProvider } from './components/userServiceContext'
 
 import store from './store'
 

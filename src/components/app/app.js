@@ -4,8 +4,8 @@ import { PrivateRoute } from '../../utils'
 
 import Header from '../header'
 import Sidebar from '../sidebar'
-import LoginPage from '../../pages/login-page'
-import DashboardPage from '../../pages/dashboard-page'
+import LoginPage from '../../pages/loginPage'
+import DashboardPage from '../../pages/dashboardPage'
 
 const App = () => {
   return (

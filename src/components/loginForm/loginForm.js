@@ -1,9 +1,9 @@
 import React from 'react'
 import { withFormik } from "formik"
-import UserService from '../../services/user-service'
+import UserService from '../../services/userService'
 import { withRouter } from 'react-router-dom'
 
-import './login-form.css'
+import './loginForm.css'
 
 const LoginForm = (props) => {
 

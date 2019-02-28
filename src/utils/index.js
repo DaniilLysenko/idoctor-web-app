@@ -1,5 +1,5 @@
 import compose from './compose'
-import PrivateRoute from './private-route'
+import PrivateRoute from './privateRoute'
 
 export {
   compose,
