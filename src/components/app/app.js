@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom';
+import { PrivateRoute } from '../../utils'
 
 import Header from '../header'
 import Sidebar from '../sidebar'
@@ -16,7 +17,7 @@ const App = () => {
           <div className="row">
             <Sidebar />
             <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
-              <Route path='/' component={DashboardPage}/>
+              <PrivateRoute path='/' component={DashboardPage}/>
             </main>
           </div>
         </div>

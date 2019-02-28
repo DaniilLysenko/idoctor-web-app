@@ -102,6 +102,9 @@ export default
 
       userService.login()
         .then(response => {
+          console.log(response)
+          localStorage.setItem('user', JSON.stringify(response))
+          console.log(localStorage.getItem('user'))
           props.history.push('/')
         })
 
