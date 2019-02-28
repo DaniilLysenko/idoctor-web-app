@@ -17,7 +17,7 @@ const App = () => {
           <div className="row">
             <Sidebar />
             <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
-              <PrivateRoute path='/' component={DashboardPage}/>
+              <PrivateRoute path='/' component={DashboardPage} type="ROLE_USER" exact />
             </main>
           </div>
         </div>

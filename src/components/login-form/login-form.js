@@ -102,10 +102,21 @@ export default
 
       userService.login()
         .then(response => {
-          console.log(response)
+
           localStorage.setItem('user', JSON.stringify(response))
-          console.log(localStorage.getItem('user'))
-          props.history.push('/')
+
+          let redirect
+
+          switch (response.role) {
+            case 'ROLE_DOCTOR':
+              redirect = '/doctor'
+              break
+
+            default:
+              redirect = '/'
+          }
+
+          props.history.push(redirect)
         })
 
       setSubmitting(false)
