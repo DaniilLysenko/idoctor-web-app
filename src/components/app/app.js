@@ -17,7 +17,10 @@ const App = () => {
           <div className="row">
             <Sidebar />
             <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
-              <PrivateRoute path='/' component={DashboardPage} type="ROLE_USER" exact />
+              <Switch>
+                <PrivateRoute path='/' exact component={DashboardPage} type="ROLE_USER" />
+                <Route render={() => <h2>Сторінка не знайдена :(</h2>} />
+              </Switch>
             </main>
           </div>
         </div>
