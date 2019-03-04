@@ -30,6 +30,11 @@ const Sidebar = () => {
         </h6>
         <ul className="nav flex-column mb-2">
           <li className="nav-item">
+            <Link className="nav-link" to="/profile">
+              <i className="far fa-user" /> Персональна інформація
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="#">
               <i className="fas fa-cog"/> Налаштування
             </Link>
