@@ -5,18 +5,23 @@ import { BrowserRouter as Router } from "react-router-dom"
 
 import App from './components/app';
 import UserService from './services/userService'
+import AnnouncementService from './services/announcementService'
+import { AnnouncementServiceProvider } from './components/announcementServiceContext'
 import { UserServiceProvider } from './components/userServiceContext'
 
 import store from './store'
 
 const userService = new UserService();
+const announcementService = new AnnouncementService();
 
 ReactDOM.render(
   <Provider store={store}>
     <UserServiceProvider value={userService}>
-      <Router>
-        <App />
-      </Router>
+      <AnnouncementServiceProvider value={announcementService}>
+        <Router>
+          <App />
+        </Router>
+      </AnnouncementServiceProvider>
     </UserServiceProvider>
   </Provider>
   , document.getElementById('root')
