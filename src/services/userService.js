@@ -2,10 +2,10 @@ import config from '../config'
 import axios from 'axios'
 
 export default class UserService {
-  async login() {
+  async login(email, password) {
     return await axios.post(`${config.backendUrl}/login`, {
-      email: 'den@gmail.com',
-      password: 'qwerty'
+      email,
+      password
     });
   }
 }

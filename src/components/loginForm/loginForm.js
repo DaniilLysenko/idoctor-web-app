@@ -80,7 +80,7 @@ export default
     validate: values => {
       const errors = []
 
-      const { password, email } = values;
+      const { password, email } = values
 
       if (!email) {
         errors.push("Email обов'язковий")
@@ -100,25 +100,28 @@ export default
     handleSubmit: (values, { setSubmitting, props }) => {
       const userService = new UserService()
 
-      userService.login()
+      const { password, email } = values
+
+      userService.login(email, password)
         .then(response => {
 
-          console.log(response)
+          localStorage.setItem('user', JSON.stringify(response.data.user))
 
-          // localStorage.setItem('user', JSON.stringify(response))
-          //
-          // let redirect
-          //
-          // switch (response.role) {
-          //   case 'ROLE_DOCTOR':
-          //     redirect = '/doctor'
-          //     break
-          //
-          //   default:
-          //     redirect = '/'
-          // }
-          //
-          // props.history.push(redirect)
+          let redirect
+
+          switch (response.role) {
+            case 'ROLE_DOCTOR':
+              redirect = '/doctor'
+              break
+
+            default:
+              redirect = '/'
+          }
+
+          props.history.push(redirect)
+        })
+        .catch(err => {
+          alert('User not found')
         })
 
       setSubmitting(false)

@@ -19,6 +19,7 @@ const App = () => {
             <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
               <Switch>
                 <PrivateRoute path='/' exact component={DashboardPage} type="ROLE_USER" />
+                <PrivateRoute path='/announcements' component={DashboardPage} type="ROLE_USER" />
                 <Route render={() => <h2>Сторінка не знайдена :(</h2>} />
               </Switch>
             </main>

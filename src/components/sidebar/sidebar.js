@@ -9,7 +9,7 @@ const Sidebar = () => {
       <div className="sidebar-sticky">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <Link className="nav-link active" to="#">
+            <Link className="nav-link active" to="/announcements">
               <i className="far fa-envelope" /> Оголошення
             </Link>
           </li>
@@ -19,7 +19,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="#">
+            <Link className="nav-link" to="/medical-card">
               <i className="far fa-address-card"/> Мед. карта
             </Link>
           </li>
@@ -35,7 +35,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="#">
+            <Link className="nav-link" to="/settings">
               <i className="fas fa-cog"/> Налаштування
             </Link>
           </li>
