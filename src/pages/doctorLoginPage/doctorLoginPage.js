@@ -3,14 +3,14 @@ import { Redirect } from 'react-router-dom'
 
 import LoginForm from '../../components/loginForm'
 
-import UserService from '../../services/userService'
+import DoctorService from '../../services/doctorService'
 
-import './loginPage.css';
+import './doctorLoginPage.css';
 
-class LoginPage extends Component {
+class DoctorLoginPage extends Component {
   render() {
 
-    const userService = new UserService()
+    const doctorService = new DoctorService()
 
     if (localStorage.getItem('user')) {
       return <Redirect to="/"/>
@@ -19,11 +19,11 @@ class LoginPage extends Component {
     return (
       <div className="wrapper">
         <div className="container text-center">
-          <LoginForm service={userService} type="user"/>
+          <LoginForm service={doctorService} type="doctor"/>
         </div>
       </div>
     )
   }
 }
 
-export default LoginPage
+export default DoctorLoginPage

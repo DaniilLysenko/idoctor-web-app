@@ -1,6 +1,5 @@
 import React from 'react'
 import { withFormik } from "formik"
-import UserService from '../../services/userService'
 import { withRouter } from 'react-router-dom'
 
 import './loginForm.css'
@@ -30,13 +29,25 @@ const LoginForm = (props) => {
     errors,
     handleChange,
     handleBlur,
-    handleSubmit
+    handleSubmit,
+    type
   } = props
+
+  let loginIcon = ''
+
+  switch (type) {
+    case 'doctor':
+      loginIcon = 'https://image.flaticon.com/icons/svg/387/387561.svg'
+      break
+    case 'user':
+      loginIcon = 'https://image.flaticon.com/icons/svg/1467/1467464.svg'
+      break
+  }
 
   return (
     <form className="form-signIn" onSubmit={handleSubmit}>
       <img
-        className="mb-4" src="https://image.flaticon.com/icons/svg/60/60473.svg"
+        className="mb-4" src={loginIcon}
         width="72"
         height="72"
         alt="Login Icon"
@@ -98,11 +109,12 @@ export default
     },
 
     handleSubmit: (values, { setSubmitting, props }) => {
-      const userService = new UserService()
 
       const { password, email } = values
 
-      userService.login(email, password)
+      const { service } = props
+
+      service.login(email, password)
         .then(response => {
 
           localStorage.setItem('user', JSON.stringify(response.data.user))
