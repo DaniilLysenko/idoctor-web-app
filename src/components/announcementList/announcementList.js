@@ -10,9 +10,9 @@ class AnnouncementList extends Component {
     })
 
     return (
-      <Fragment>
+      <div className="row">
         { announcements }
-      </Fragment>
+      </div>
     )
   }
 }

@@ -6,6 +6,6 @@ export default class UserService {
     return await axios.post(`${config.backendUrl}/login`, {
       email,
       password
-    });
+    })
   }
 }
