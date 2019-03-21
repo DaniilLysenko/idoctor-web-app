@@ -33,7 +33,7 @@ const LoginForm = (props) => {
     type
   } = props
 
-  let loginIcon = ''
+  let loginIcon
 
   switch (type) {
     case 'doctor':
@@ -42,6 +42,8 @@ const LoginForm = (props) => {
     case 'user':
       loginIcon = 'https://image.flaticon.com/icons/svg/1467/1467464.svg'
       break
+    default:
+      loginIcon = ''
   }
 
   return (

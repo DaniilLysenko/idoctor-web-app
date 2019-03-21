@@ -11,6 +11,8 @@ import { UserServiceProvider } from './components/userServiceContext'
 
 import store from './store'
 
+import './styles/dashboard.css'
+
 const userService = new UserService();
 const announcementService = new AnnouncementService();
 
