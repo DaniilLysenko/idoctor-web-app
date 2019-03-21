@@ -8,4 +8,8 @@ export default class DoctorService {
       password
     })
   }
+
+  async addPatient(userInfo) {
+    return await axios.post(`${config.backendUrl}/doctor/add-patient`, userInfo)
+  }
 }
