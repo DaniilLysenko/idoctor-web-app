@@ -6,15 +6,26 @@ import DoctorService from "../../services/doctorService"
 const AddPatientForm = (props) => {
 
   const renderErrors = (errors) => {
-    if (errors.length > 0) {
+
+    const alertStyle = {
+      display: 'none'
+    }
+
+    if (Object.keys(errors).length > 0) {
       return (
-        <div className="alert alert-danger">
+        <div className="alert alert-danger" style={alertStyle}>
           <ul>
             {
-              errors.map((err, idx) => {
-                return (
-                  <li key={idx}>{err}</li>
-                )
+              Object.keys(errors).map((name, idx) => {
+                if (touched[name]) {
+                  alertStyle.display = 'block'
+
+                  return (
+                    <li key={idx}>{errors[name]}</li>
+                  )
+                } else {
+                  return ''
+                }
               })
             }
           </ul>
@@ -28,7 +39,8 @@ const AddPatientForm = (props) => {
     errors,
     handleChange,
     handleBlur,
-    handleSubmit
+    handleSubmit,
+    touched
   } = props
 
   return (
@@ -179,11 +191,12 @@ export default withRouter(withFormik({
     street: '',
     streetNumber: '',
     apartmentNumber: '',
-    hospital: ''
+    hospital: '',
+    birthday: new Date().toISOString()
   }),
 
   validate: values => {
-    let errors = []
+    let errors = {}
 
     const {
       email,
@@ -197,39 +210,39 @@ export default withRouter(withFormik({
     } = values
 
     if (!email) {
-      errors.push("Email обов'язковий")
+      errors.email = "Email обов'язковий"
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
-      errors.push('Формат email неправильний')
+      errors.email = 'Формат email неправильний'
     }
 
     if (!firstName) {
-      errors.push("Ім'я обов'язкове")
+      errors.firstName = "Ім'я обов'язкове"
     }
 
     if (!lastName) {
-      errors.push("Прізвище обов'язкове")
+      errors.lastName = "Прізвище обов'язкове"
     }
 
     if (!patronName) {
-      errors.push("По-батькові обов'язкове")
+      errors.patronName = "По-батькові обов'язкове"
     }
 
     if (!street) {
-      errors.push("Назва вулиці обов'язкова")
+      errors.street = "Назва вулиці обов'язкова"
     }
 
     if (!streetNumber) {
-      errors.push("Номер будинку обов'язковий")
+      errors.streetNumber = "Номер будинку обов'язковий"
     }
 
     if (!hospital || isNaN(parseInt(hospital))) {
-      errors.push("Лікарня обов'язкова")
+      errors.hospital = "Лікарня обов'язкова"
     }
 
     if (!password) {
-      errors.push("Пароль обов'язковий")
+      errors.password = "Пароль обов'язковий"
     } else if (password.trim().length < 8) {
-      errors.push("Пароль має бути більше 8 символів")
+      errors.password = "Пароль має бути більше 8 символів"
     }
 
     return errors
