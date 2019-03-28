@@ -281,7 +281,9 @@ export default withRouter(withFormik({
     }
 
     doctorService.addPatient(values).then(response => {
-      console.log(response)
+      if (response.status === 200 && response.data.message === 'OK') {
+        props.history.push('/')
+      }
     })
 
     setSubmitting(false)
