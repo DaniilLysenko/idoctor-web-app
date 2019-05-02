@@ -23,6 +23,11 @@ const DoctorSidebar = () => {
               <i className="far fa-plus-square"/> Додати паціента
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/doctor/all-patients">
+              <i className="fas fa-list-ol"/> Всі паціенти
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
