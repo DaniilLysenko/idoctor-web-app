@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export default class UserService {
   async login(email, password) {
-    return await axios.post(`${config.backendUrl}/login`, {
+    return await axios.post(`${config.serverUrl}/login`, {
       email,
       password
     })
