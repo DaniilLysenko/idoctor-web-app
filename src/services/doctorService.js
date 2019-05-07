@@ -10,7 +10,13 @@ export default class DoctorService {
   }
 
   async addPatient(userInfo) {
-    return await axios.post(`${config.apiUrl}/doctor/save-patient`, userInfo)
+    const doctor = JSON.parse(localStorage.getItem('user'))
+
+    return await axios.post(`${config.apiUrl}/doctor/save-patient`, userInfo, {
+      headers: {
+        'AUTH-KEY': doctor.apiKey
+      }
+    })
   }
 
   async getAllPatients() {
