@@ -1,3 +1,3 @@
-import PatientListPage from 'patientListPage'
+import PatientListPage from './patientListPage'
 
 export default PatientListPage
