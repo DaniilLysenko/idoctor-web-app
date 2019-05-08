@@ -41,7 +41,7 @@ class AllPatientItem extends Component {
     let button
 
     if (this.state.doctorFound) {
-        button = <Link to={`/patients/${patient.id}`} className="btn btn-info">Інформація</Link>
+        button = <Link to={`/doctor/patients/${patient.id}`} className="btn btn-info">Інформація</Link>
     } else {
         button = <button className="btn btn-success" onClick={() => this.handleClick(patient)}>Додати</button>
     }

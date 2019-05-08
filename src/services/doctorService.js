@@ -51,4 +51,14 @@ export default class DoctorService {
       }
     });
   }
+
+  async getSinglePatient(id) {
+    const doctor = JSON.parse(localStorage.getItem('user'))
+
+    return await axios.get(`${config.apiUrl}/doctor/patients/${id}`, {
+      headers: {
+        'AUTH-KEY': doctor.apiKey
+      }
+    });
+  }
 }

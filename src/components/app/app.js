@@ -9,6 +9,7 @@ import DoctorLoginPage from '../../pages/doctorLoginPage'
 import DashboardPage from '../../pages/dashboardPage'
 import AddPatientPage from '../../pages/addPatientPage'
 import PatientListPage from '../../pages/patientListPage'
+import DoctorPatientInfoPage from '../../pages/doctorPatientInfoPage'
 
 const App = () => {
   return (
@@ -29,6 +30,8 @@ const App = () => {
                 {/*Doctor User*/}
                 <PrivateRoute path='/doctor/add-patient' component={AddPatientPage} type="ROLE_DOCTOR" />
                 <PrivateRoute path='/doctor/all-patients' component={PatientListPage} type="ROLE_DOCTOR" />
+
+                <PrivateRoute path='/doctor/patients/:id' component={DoctorPatientInfoPage} type="ROLE_DOCTOR" />
 
                 {/*Not Found*/}
                 <Route render={() => <h2>Сторінка не знайдена :(</h2>} />
