@@ -52,6 +52,7 @@ class AllPatientsList extends Component {
             <th scope="col">Прізвище</th>
             <th scope="col">По-батькові</th>
             <th scope="col">Email</th>
+            <th scope="col">Додати паціента</th>
           </tr>
           </thead>
           <tbody>

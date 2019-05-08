@@ -280,7 +280,7 @@ export default withRouter(withFormik({
       id: parseInt(values.hospital)
     }
 
-    doctorService.addPatient(values).then(response => {
+    doctorService.savePatient(values).then(response => {
       if (response.status === 200 && response.data.message === 'OK') {
         props.history.push('/')
       }

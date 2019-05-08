@@ -9,7 +9,7 @@ export default class DoctorService {
     })
   }
 
-  async addPatient(userInfo) {
+  async savePatient(userInfo) {
     const doctor = JSON.parse(localStorage.getItem('user'))
 
     return await axios.post(`${config.apiUrl}/doctor/save-patient`, userInfo, {
@@ -38,6 +38,16 @@ export default class DoctorService {
       },
       params: {
         query
+      }
+    });
+  }
+
+  async addPatient(patientId) {
+    const doctor = JSON.parse(localStorage.getItem('user'))
+
+    return await axios.post(`${config.apiUrl}/doctor/add-patient/${patientId}`, {}, {
+      headers: {
+        'AUTH-KEY': doctor.apiKey
       }
     });
   }
