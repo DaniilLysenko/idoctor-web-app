@@ -10,6 +10,7 @@ import DashboardPage from '../../pages/dashboardPage'
 import AddPatientPage from '../../pages/addPatientPage'
 import PatientListPage from '../../pages/patientListPage'
 import PatientProfilePage from '../../pages/patientProfilePage'
+import PatientMedicalCardPage from "../../pages/patientMedicalCardPage"
 
 const App = () => {
   return (
@@ -32,6 +33,8 @@ const App = () => {
                 <PrivateRoute path='/doctor/all-patients' component={PatientListPage} type="ROLE_DOCTOR" />
 
                 <PrivateRoute path='/doctor/patients/:id' component={PatientProfilePage} type="ROLE_DOCTOR" />
+
+                <PrivateRoute path='/doctor/patient-medical-card/:id' component={PatientMedicalCardPage} type="ROLE_DOCTOR" />
 
                 {/*Not Found*/}
                 <Route render={() => <h2>Сторінка не знайдена :(</h2>} />
