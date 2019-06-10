@@ -12,6 +12,8 @@ import PatientListPage from '../../pages/patientListPage'
 import PatientProfilePage from '../../pages/patientProfilePage'
 import PatientMedicalCardPage from "../../pages/patientMedicalCardPage"
 import AddMedicalCardRecordPage from "../../pages/addMedicalCardRecordPage"
+import AddMedicalCardAnalyzePage from "../../pages/addMedicalCardAnalyzePage"
+import FeedbackPage from "../../pages/feedbackPage/feedbackPage"
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
                 <PrivateRoute path='/' exact component={DashboardPage} type="DOCTOR_USER" />
                 <PrivateRoute path='/announcements' component={DashboardPage} type="DOCTOR_USER" />
 
+                <PrivateRoute path='/feedback' component={FeedbackPage} type="ROLE_USER" />
+
                 {/*Doctor User*/}
                 <PrivateRoute path='/doctor/add-patient' component={AddPatientPage} type="ROLE_DOCTOR" />
                 <PrivateRoute path='/doctor/all-patients' component={PatientListPage} type="ROLE_DOCTOR" />
@@ -36,6 +40,7 @@ const App = () => {
                 <PrivateRoute path='/doctor/patients/:id' component={PatientProfilePage} type="ROLE_DOCTOR" />
 
                 <PrivateRoute path='/doctor/patient-medical-card/add-record/:id' component={AddMedicalCardRecordPage} type="ROLE_DOCTOR" />
+                <PrivateRoute path='/doctor/patient-medical-card/add-analyze/:id' component={AddMedicalCardAnalyzePage} type="ROLE_DOCTOR" />
                 <PrivateRoute path='/doctor/patient-medical-card/:id' component={PatientMedicalCardPage} type="ROLE_DOCTOR" />
 
                 {/*Not Found*/}

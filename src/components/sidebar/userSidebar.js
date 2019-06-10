@@ -23,6 +23,11 @@ const UserSidebar = () => {
               <i className="far fa-address-card"/> Мед. карта
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/feedback">
+              <i className="far fa-address-card"/> Відгуки
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

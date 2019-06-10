@@ -1,0 +1,3 @@
+import AddMedicalCardAnalyzePage from './addMedicalCardAnalyzePage'
+
+export default AddMedicalCardAnalyzePage
